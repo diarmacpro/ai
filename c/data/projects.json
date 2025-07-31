@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "E-commerce Platform",
+      "description": "Modern e-commerce solution with advanced features including real-time inventory, payment processing, and customer analytics",
+      "status": "active",
+      "progress": 75,
+      "teamMembers": [1, 2, 4],
+      "createdAt": "2025-01-01T00:00:00Z",
+      "dueDate": "2025-03-01T00:00:00Z",
+      "budget": 50000,
+      "client": "TechCorp Inc."
+    },
+    {
+      "id": 2,
+      "name": "API Development",
+      "description": "RESTful API development for mobile and web applications with comprehensive documentation and testing suite",
+      "status": "active",
+      "progress": 60,
+      "teamMembers": [2, 3, 1],
+      "createdAt": "2025-01-05T00:00:00Z",
+      "dueDate": "2025-02-15T00:00:00Z",
+      "budget": 30000,
+      "client": "StartupXYZ"
+    },
+    {
+      "id": 3,
+      "name": "Mobile App",
+      "description": "Cross-platform mobile application with offline capabilities and push notifications",
+      "status": "active",
+      "progress": 30,
+      "teamMembers": [4, 1, 2],
+      "createdAt": "2025-01-10T00:00:00Z",
+      "dueDate": "2025-04-01T00:00:00Z",
+      "budget": 75000,
+      "client": "MobileFirst Ltd."
+    },
+    {
+      "id": 4,
+      "name": "Data Analytics Dashboard",
+      "description": "Business intelligence dashboard with real-time data visualization and reporting capabilities",
+      "status": "planning",
+      "progress": 10,
+      "teamMembers": [3, 2],
+      "createdAt": "2025-01-18T00:00:00Z",
+      "dueDate": "2025-05-01T00:00:00Z",
+      "budget": 40000,
+      "client": "DataCorp"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Design new landing page",
+      "description": "Create a modern and responsive landing page for the new product launch with improved user experience and conversion optimization",
+      "status": "in-progress",
+      "priority": "high",
+      "projectId": 1,
+      "assigneeId": 1,
+      "createdAt": "2025-01-15T10:00:00Z",
+      "dueDate": "2025-01-20T17:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Implement user authentication",
+      "description": "Add secure login and registration functionality with JWT tokens, password hashing, and email verification",
+      "status": "pending",
+      "priority": "high",
+      "projectId": 1,
+      "assigneeId": 2,
+      "createdAt": "2025-01-14T14:30:00Z",
+      "dueDate": "2025-01-25T17:00:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Write API documentation",
+      "description": "Document all REST API endpoints with detailed examples, request/response schemas, and authentication requirements",
+      "status": "completed",
+      "priority": "medium",
+      "projectId": 2,
+      "assigneeId": 3,
+      "createdAt": "2025-01-10T09:00:00Z",
+      "dueDate": "2025-01-15T17:00:00Z"
+    },
+    {
+      "id": 4,
+      "title": "Set up CI/CD pipeline",
+      "description": "Configure automated testing, building, and deployment pipeline using GitHub Actions and Docker",
+      "status": "pending",
+      "priority": "medium",
+      "projectId": 2,
+      "assigneeId": 1,
+      "createdAt": "2025-01-12T11:00:00Z",
+      "dueDate": "2025-01-30T17:00:00Z"
+    },
+    {
+      "id": 5,
+      "title": "Mobile app testing",
+      "description": "Comprehensive testing of mobile application across various devices, operating systems, and screen sizes",
+      "status": "in-progress",
+      "priority": "low",
+      "projectId": 3,
+      "assigneeId": 4,
+      "createdAt": "2025-01-13T16:00:00Z",
+      "dueDate": "2025-02-05T17:00:00Z"
+    },
+    {
+      "id": 6,
+      "title": "Database optimization",
+      "description": "Optimize database queries and implement proper indexing for better performance",
+      "status": "pending",
+      "priority": "medium",
+      "projectId": 2,
+      "assigneeId": 2,
+      "createdAt": "2025-01-16T08:00:00Z",
+      "dueDate": "2025-02-01T17:00:00Z"
+    },
+    {
+      "id": 7,
+      "title": "User interface redesign",
+      "description": "Redesign the main dashboard interface with improved usability and modern design principles",
+      "status": "completed",
+      "priority": "high",
+      "projectId": 1,
+      "assigneeId": 4,
+      "createdAt": "2025-01-08T12:00:00Z",
+      "dueDate": "2025-01-18T17:00:00Z"
+    },
+    {
+      "id": 8,
+      "title": "Security audit",
+      "description": "Conduct comprehensive security audit and implement necessary security measures",
+      "status": "pending",
+      "priority": "high",
+      "projectId": 2,
+      "assigneeId": 3,
+      "createdAt": "2025-01-17T10:30:00Z",
+      "dueDate": "2025-02-10T17:00:00Z"
+    }
+  ]
+}

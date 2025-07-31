@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  </head>
+  <body>
+
+		<nav class="navbar bg-body-tertiary">
+			<div class="container-fluid">
+				<div class="dropdown">
+					<button class="btn btn-link nav-link px-0 px-lg-2 py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme">
+						<i data-lucide="boxes"></i>
+					</button>
+					<ul class="dropdown-menu mt-3">
+						<div class="list-group list-group-flush">
+							<a class="list-group-item list-group-item-action border border-0" data-menu="dashboard"><i data-lucide="chart-no-axes-combined"></i> Dashboard</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="agent"><i data-lucide="brain"></i> Agent</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="database"><i data-lucide="database-zap"></i> Database</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="setting"><i data-lucide="sliders-vertical"></i> Setting</a>
+						</div>
+					</ul>
+				</div>
+
+				<div class="dropdown">
+					<button class="btn btn-link nav-link px-0 px-lg-2 py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme">
+						<i data-lucide="circle-user"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme">
+						<div class="list-group list-group-flush">
+							<a class="list-group-item list-group-item-action border border-0" data-menu="pengaturan"><i data-lucide="settings"></i> Pengaturan</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="bantuan"><i data-lucide="circle-question-mark"></i> Bantuan</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="logout"><i data-lucide="power"></i> Logout</a>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container-fluid" id="main"></div>
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/lucide@latest"></script>
+		<script src="./components.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				lucide.createIcons();
+			});
+		</script>
+		
+		<script>
+			// Redirect jika sudah login dan akses langsung ke root
+			if (window.location.search === '' && localStorage.getItem('login') === 'true') {
+				window.location.href = './?dashboard';
+			}
+		</script>
+
+		<script>
+
+				const main = $('#main');
+				const ui = new Components();
+				const idUser = "4a34f";
+
+				const menuHandlers = {
+					dashboard: () => ui.dashboard(),
+					agent: () => ui.agent(),
+					database: () => ui.database(),
+					setting: () => ui.setting(),
+					pengaturan: () => ui.pengaturan(),
+					bantuan: () => ui.bantuan(),
+					logout: () => {
+					localStorage.removeItem('login');
+					location.href = './';
+					}
+				};
+
+
+				if (localStorage.getItem('login') !== 'true') {
+					$('.navbar').hide(); // Sembunyikan navbar sebelum login
+					main.html(ui.login());
+
+					// Tangani submit login
+					$(document).on('submit', '#formLogin', function (e) {
+						e.preventDefault();
+						const username = $('#username').val();
+						const password = $('#password').val();
+
+						if (username === 'abc' && password === 'abc123') {
+							localStorage.setItem('login', 'true');
+							$('.navbar').show();
+							window.location.href = './?dashboard';
+						} else {
+							alert('Username atau password salah!');
+						}
+					});
+				} else {
+					$('.navbar').show();
+				}
+
+
+				function loadFromUrlQuery() {
+					const query = window.location.search.substring(1);
+					if (!query) {
+						// Jika URL tidak mengandung query (?menu), tampilkan login
+						main.html(ui.login());
+						return;
+					}
+					const handler = menuHandlers[query];
+					if (typeof handler === 'function') {
+						main.html(handler());
+					}
+				}
+
+				loadFromUrlQuery();
+
+				window.onpopstate = () => {
+					loadFromUrlQuery();
+				};
+
+				$(document).on('click', '[data-menu]', function () {
+					const key = $(this).data('menu');
+					const handler = menuHandlers[key];
+					if (typeof handler === 'function') {
+						main.html(handler());
+						const newUrl = `${window.location.pathname}?${key}`;
+						history.pushState(null, '', newUrl);
+					} else {
+						console.warn(`Handler tidak ditemukan untuk menu: "${key}"`);
+					}
+				});
+
+		</script>
+  </body>
+</html>

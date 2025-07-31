@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+
+		<nav class="navbar bg-body-tertiary">
+			<div class="container-fluid">
+				<div class="dropdown">
+					<button class="btn btn-link nav-link px-0 px-lg-2 py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme">
+						<i data-lucide="boxes"></i>
+					</button>
+					<ul class="dropdown-menu mt-3">
+						<div class="list-group list-group-flush">
+							<a class="list-group-item list-group-item-action border border-0" data-menu="dashboard"><i data-lucide="chart-no-axes-combined"></i> Dashboard</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="whatsapp"><i data-lucide="message-circle-more"></i> WhatsApp</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="bot"><i data-lucide="bot-message-square"></i> Bot</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="agent"><i data-lucide="brain"></i> Agent</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="knowledge"><i data-lucide="database-zap"></i> Knowledge</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="contanct"><i data-lucide="contact"></i> Contacts</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="setting"><i data-lucide="sliders-vertical"></i> Setting</a>
+						</div>
+					</ul>
+				</div>
+
+				<div class="dropdown">
+					<button class="btn btn-link nav-link px-0 px-lg-2 py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme">
+						<i data-lucide="circle-user"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme">
+						<div class="list-group list-group-flush">
+							<a class="list-group-item list-group-item-action border border-0" data-menu="profile"><i data-lucide="user-round"></i> Profile</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="pengaturan"><i data-lucide="settings"></i> Pengaturan</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="api"><i data-lucide="key-round"></i> API</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="billing"><i data-lucide="dollar-sign"></i> Billing</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="bantuan"><i data-lucide="circle-question-mark"></i> Bantuan</a>
+							<a class="list-group-item list-group-item-action border border-0" data-menu="logout"><i data-lucide="power"></i> Logout</a>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container-fluid" id="main">
+			<h1>a</h1>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/lucide@latest"></script>
+		<script src="./components.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				lucide.createIcons();
+			});
+		</script>
+		
+		<script>
+			$(document).on('click', '.btn-edit-knowledge', function () {
+				const id = $(this).data('id');
+				const item = data.find(d => d.id === id);
+				if (item) {
+					$('#knowledgeId').val(item.id);
+					$('#knowledgeTitle').val(item.title);
+					$('#knowledgeContent').val(item.content);
+					$('#modalKnowledgeLabel').text('Edit Knowledge');
+					$('#modalKnowledge').modal('show');
+				}
+			});
+
+			$(document).on('click', '.btn-delete-knowledge', function () {
+				const id = $(this).data('id');
+				if (confirm("Yakin ingin menghapus knowledge ini?")) {
+					// Lakukan proses penghapusan dari array/data
+				}
+			});
+
+			$(document).on('click', '#formKnowledge', function () {
+				// e.preventDefault();
+				// const id = $('#knowledgeId').val();
+				const title = $('#knowledgeTitle').val();
+				const content = $('#knowledgeContent').val();
+
+				console.log({title,content});
+
+				// if (id) {
+				//   // Edit existing item
+				// } else {
+				//   // Tambah baru
+				// }
+
+				// $('#modalKnowledge').modal('hide');
+			});
+
+		</script>
+
+		<script>
+			$(() => {
+				const main = $('#main');
+				const ui = new Components();
+				const idUser = "4a34f";
+
+				const menuHandlers = {
+					dashboard: () => ui.dashboard(),
+					whatsapp: () => ui.whatsapp(),
+					bot: () => ui.bot(),
+					agent: () => ui.agent(),
+					knowledge: () => ui.knowledge(),
+					setting: () => ui.setting(),
+					profile: () => ui.profile(idUser),
+					pengaturan: () => ui.pengaturan(idUser),
+					api: () => ui.api(),
+					billing: () => ui.billing(),
+					bantuan: () => ui.bantuan(),
+					logout: () => ui.logout()
+				};
+
+				function loadFromUrlQuery() {
+					const query = window.location.search.substring(1);
+					const handler = menuHandlers[query];
+					if (typeof handler === 'function') {
+						main.html(handler());
+					}
+				}
+
+				// Panggil setelah menuHandlers tersedia
+				loadFromUrlQuery();
+
+				window.onpopstate = () => {
+					loadFromUrlQuery();
+				};
+
+				$(document).on('click', '[data-menu]', function () {
+					const key = $(this).data('menu');
+					const handler = menuHandlers[key];
+					if (typeof handler === 'function') {
+						main.html(handler());
+						const newUrl = `${window.location.pathname}?${key}`;
+						history.pushState(null, '', newUrl);
+					} else {
+						console.warn(`Handler tidak ditemukan untuk menu: "${key}"`);
+					}
+				});
+			});
+
+		</script>
+  </body>
+</html>

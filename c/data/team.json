@@ -1,0 +1,82 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "role": "Frontend Developer",
+      "email": "john.doe@taskflow.com",
+      "avatar": "JD",
+      "tasksCompleted": 24,
+      "tasksActive": 3,
+      "skills": ["React", "TypeScript", "CSS", "HTML"],
+      "joinDate": "2024-03-15T00:00:00Z",
+      "department": "Engineering",
+      "location": "New York, NY"
+    },
+    {
+      "id": 2,
+      "name": "Sarah Wilson",
+      "role": "Backend Developer",
+      "email": "sarah.wilson@taskflow.com",
+      "avatar": "SW",
+      "tasksCompleted": 18,
+      "tasksActive": 2,
+      "skills": ["Node.js", "Python", "PostgreSQL", "AWS"],
+      "joinDate": "2024-02-01T00:00:00Z",
+      "department": "Engineering",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": 3,
+      "name": "Mike Johnson",
+      "role": "DevOps Engineer",
+      "email": "mike.johnson@taskflow.com",
+      "avatar": "MJ",
+      "tasksCompleted": 15,
+      "tasksActive": 4,
+      "skills": ["Docker", "Kubernetes", "AWS", "Jenkins"],
+      "joinDate": "2024-01-10T00:00:00Z",
+      "department": "Infrastructure",
+      "location": "Austin, TX"
+    },
+    {
+      "id": 4,
+      "name": "Emily Chen",
+      "role": "UI/UX Designer",
+      "email": "emily.chen@taskflow.com",
+      "avatar": "EC",
+      "tasksCompleted": 22,
+      "tasksActive": 1,
+      "skills": ["Figma", "Adobe XD", "Sketch", "Prototyping"],
+      "joinDate": "2024-04-20T00:00:00Z",
+      "department": "Design",
+      "location": "Seattle, WA"
+    },
+    {
+      "id": 5,
+      "name": "David Rodriguez",
+      "role": "Product Manager",
+      "email": "david.rodriguez@taskflow.com",
+      "avatar": "DR",
+      "tasksCompleted": 12,
+      "tasksActive": 5,
+      "skills": ["Product Strategy", "Agile", "Analytics", "User Research"],
+      "joinDate": "2024-05-01T00:00:00Z",
+      "department": "Product",
+      "location": "Chicago, IL"
+    },
+    {
+      "id": 6,
+      "name": "Lisa Thompson",
+      "role": "QA Engineer",
+      "email": "lisa.thompson@taskflow.com",
+      "avatar": "LT",
+      "tasksCompleted": 19,
+      "tasksActive": 3,
+      "skills": ["Test Automation", "Selenium", "Jest", "Manual Testing"],
+      "joinDate": "2024-06-15T00:00:00Z",
+      "department": "Quality Assurance",
+      "location": "Boston, MA"
+    }
+  ]
+}
