@@ -1,0 +1,308 @@
+/* Custom CSS for AI Bot Dashboard */
+
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --border-radius: 0.5rem;
+  --box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Navigation Styles */
+.navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Main Content */
+.main-content {
+  min-height: calc(100vh - 76px);
+  padding: 2rem 0;
+  transition: var(--transition);
+}
+
+/* Card Styles */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--primary-color), #0056b3);
+  color: white;
+  border-bottom: none;
+  padding: 1rem 1.5rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Form Styles */
+.form-control, .form-select {
+  border-radius: var(--border-radius);
+  border: 1px solid #dee2e6;
+  transition: var(--transition);
+  padding: 0.75rem 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Button Styles */
+.btn {
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: var(--transition);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), #0056b3);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--success-color), #146c43);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--danger-color), #b02a37);
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, var(--warning-color), #e0a800);
+  color: var(--dark-color);
+}
+
+/* Table Styles */
+.table {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  background: white;
+}
+
+.table thead th {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border: none;
+  font-weight: 600;
+  color: var(--dark-color);
+  padding: 1rem;
+}
+
+.table tbody td {
+  padding: 1rem;
+  border-color: #f1f3f4;
+  vertical-align: middle;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* Badge Styles */
+.badge {
+  padding: 0.5rem 0.75rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+/* Stats Cards */
+.stats-card {
+  background: linear-gradient(135deg, #fff, #f8f9fa);
+  border-left: 4px solid var(--primary-color);
+  transition: var(--transition);
+}
+
+.stats-card:hover {
+  border-left-color: var(--success-color);
+}
+
+.stats-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.stats-label {
+  color: var(--secondary-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Login Form */
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-color), #0056b3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  overflow: hidden;
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-header {
+  background: linear-gradient(135deg, var(--primary-color), #0056b3);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.login-body {
+  padding: 2rem;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* QR Code Container */
+.qr-container {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: var(--border-radius);
+  border: 2px dashed #dee2e6;
+}
+
+.qr-placeholder {
+  width: 200px;
+  height: 200px;
+  background: white;
+  border: 2px solid #dee2e6;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 3rem;
+  color: var(--secondary-color);
+}
+
+/* Status Indicators */
+.status-online {
+  color: var(--success-color);
+}
+
+.status-offline {
+  color: var(--danger-color);
+}
+
+.status-pending {
+  color: var(--warning-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem 0;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .stats-number {
+    font-size: 1.5rem;
+  }
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-color), #0056b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-gradient {
+  border: 2px solid;
+  border-image: linear-gradient(135deg, var(--primary-color), #0056b3) 1;
+}
+
+.shadow-custom {
+  box-shadow: 0 0.5rem 1rem rgba(13, 110, 253, 0.15);
+}
