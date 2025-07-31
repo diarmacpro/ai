@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Uji Warna via Worker</title>
+  <style>
+    #output {
+      width: 200px;
+      height: 200px;
+      background-color: gray;
+      margin-top: 20px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+    button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Klik Tombol untuk Ubah Warna</h3>
+
+  <button onclick="sendColor('red')">Merah</button>
+  <button onclick="sendColor('yellow')">Kuning</button>
+  <button onclick="sendColor('green')">Hijau</button>
+
+  <div id="output"></div>
+
+  <script>
+    async function sendColor(color) {
+      try {
+        const res = await fetch('https://01.diarmacpro-pj02.workers.dev/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ color })
+        });
+
+        const data = await res.json();
+        document.getElementById('output').style.backgroundColor = data.color || 'gray';
+      } catch (err) {
+        console.error("Gagal mengambil warna:", err);
+      }
+    }
+  </script>
+
+</body>
+</html>
